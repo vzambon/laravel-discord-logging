@@ -1,0 +1,24 @@
+{
+    "name": "vszambon/laravel-discord-logging",
+    "description": "A Laravel package for logging messages to a Discord channel using webhooks.",
+    "version": "1.0.0",
+    "type": "library",
+    "require": {
+        "laravel/framework": "^11.0"
+    },
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Vzambon\\LaravelDiscordLogging\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Vítor Santoro Zambon",
+            "email": "vszambon@gmail.com",
+            "role": "owner"
+        }
+    ],
+    "minimum-stability": "stable",
+    "prefer-stable": true
+}
