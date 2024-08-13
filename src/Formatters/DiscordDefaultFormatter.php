@@ -74,8 +74,8 @@ class DiscordDefaultFormatter implements FormatterInterface
 
         if($isException) {
             $embeds[] = [
-                'content' => '```prolog\nStack Trace:',
-                'description' => $record['context']['exception']->getStackTrace(),
+                'title' => 'Stack Trace:',
+                'description' => $record['context']['exception']->getTraceAsString(),
             ];
         }
 
