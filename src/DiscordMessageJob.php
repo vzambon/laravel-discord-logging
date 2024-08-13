@@ -1,6 +1,6 @@
 <?php
 
-namespace Vszambon\LaravelDiscordLogging;
+namespace Vzambon\LaravelDiscordLogging;
 
 use Illuminate\Bus\Queueable as BusQueueable;
 use Illuminate\Contracts\Queue\ShouldQueue;

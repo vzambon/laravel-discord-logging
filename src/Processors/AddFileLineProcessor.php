@@ -1,6 +1,6 @@
 <?php
 
-namespace Vszambon\LaravelDiscordLogging\Processors;
+namespace Vzambon\LaravelDiscordLogging\Processors;
 
 use Monolog\LogRecord;
 

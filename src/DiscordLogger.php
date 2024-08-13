@@ -1,9 +1,9 @@
 <?php
 
-namespace Vszambon\LaravelDiscordLogging;
+namespace Vzambon\LaravelDiscordLogging;
 
-use Vszambon\LaravelDiscordLogging\Handlers\DiscordHandler;
-use Vszambon\LaravelDiscordLogging\Processors\AddFileLineProcessor;
+use Vzambon\LaravelDiscordLogging\Handlers\DiscordHandler;
+use Vzambon\LaravelDiscordLogging\Processors\AddFileLineProcessor;
 use Monolog\Level;
 use Monolog\Logger;
 

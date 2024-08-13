@@ -1,9 +1,9 @@
 <?php
 
-namespace Vszambon\LaravelDiscordLogging\Handlers;
+namespace Vzambon\LaravelDiscordLogging\Handlers;
 
-use Vszambon\LaravelDiscordLogging\DiscordMessageJob;
-use Vszambon\LaravelDiscordLogging\Formatters\DiscordDefaultFormatter;
+use Vzambon\LaravelDiscordLogging\DiscordMessageJob;
+use Vzambon\LaravelDiscordLogging\Formatters\DiscordDefaultFormatter;
 use Monolog\Formatter\FormatterInterface;
 use Monolog\Handler\AbstractProcessingHandler;
 use Monolog\Level;

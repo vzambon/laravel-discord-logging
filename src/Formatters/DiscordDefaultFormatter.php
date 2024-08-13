@@ -1,6 +1,6 @@
 <?php
 
-namespace Vszambon\LaravelDiscordLogging\Formatters;
+namespace Vzambon\LaravelDiscordLogging\Formatters;
 
 use Monolog\Formatter\FormatterInterface;
 use Monolog\Level;

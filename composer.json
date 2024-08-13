@@ -1,5 +1,5 @@
 {
-    "name": "vszambon/laravel-discord-logging",
+    "name": "Vzambon/laravel-discord-logging",
     "description": "A Laravel package for logging messages to a Discord channel using webhooks.",
     "version": "1.0.0",
     "type": "library",
@@ -15,7 +15,7 @@
     "authors": [
         {
             "name": "Vítor Santoro Zambon",
-            "email": "vszambon@gmail.com",
+            "email": "Vzambon@gmail.com",
             "role": "owner"
         }
     ],

@@ -1,6 +1,6 @@
 <?php
 
-namespace Vszambon\LaravelDiscordLogging;
+namespace Vzambon\LaravelDiscordLogging;
 
 use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Log;
