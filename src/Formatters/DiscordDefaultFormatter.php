@@ -30,15 +30,6 @@ class DiscordDefaultFormatter implements FormatterInterface
         Level::Critical->value => ':rotating_light:'
     ];
 
-    protected $dateFormat;
-
-    protected $printStack;
-
-    public function __construct(string $dateFormat = null, bool $printStack = false)
-    {
-        $this->printStack = $printStack;
-    }
-
     /**
      * {@inheritDoc}
      */
@@ -82,6 +73,9 @@ class DiscordDefaultFormatter implements FormatterInterface
         return ['embeds' => $embeds];
     }
 
+    /**
+     * {@inheritDoc}
+     */
     public function formatBatch(array $records)
     {
         $formattedBatch = '';
