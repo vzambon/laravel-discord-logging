@@ -1,5 +1,5 @@
 {
-    "name": "Vzambon/laravel-discord-logging",
+    "name": "vzambon/laravel-discord-logging",
     "description": "A Laravel package for logging messages to a Discord channel using webhooks.",
     "version": "1.0.0",
     "type": "library",
