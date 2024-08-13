@@ -28,7 +28,6 @@ class DiscordHandler extends AbstractProcessingHandler
             return;
         }
 
-        $webhookUrl = config('logging.channels.discord.webhook_url');
         DiscordMessageJob::dispatch($record['formatted']);
     }
 

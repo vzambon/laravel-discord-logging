@@ -56,23 +56,30 @@ class DiscordDefaultFormatter implements FormatterInterface
         $message = $record['message'];
         $level = $record['level_name'];
 
-        return [
-            'embeds' => [
-                [
-                    'author' => [
-                        'name' => $appname,
-                        'icon_url' => 'https://raw.githubusercontent.com/vzambon/laravel-discord-logging/assets/gir_robot.png'
-                    ],
-                    'title' => "{$messageIcon} {$level}",
-                    'description' => "`$message`",
-                    'color' => $this->logLevelColor[$record['level']],
-                    'timestamp' => $record['datetime'],
-                    'footer' => [
-                        'text' => "{$file}:{$line}",
-                    ]
+        $embeds = [
+            [
+                'author' => [
+                    'name' => $appname,
+                    'icon_url' => 'https://raw.githubusercontent.com/vzambon/laravel-discord-logging/assets/gir_robot.png'
                 ],
+                'title' => "{$messageIcon} {$level}",
+                'description' => "`$message`",
+                'color' => $this->logLevelColor[$record['level']],
+                'timestamp' => $record['datetime'],
+                'footer' => [
+                    'text' => "{$file}:{$line}",
+                ]
             ],
         ];
+
+        if($isException) {
+            $embeds[] = [
+                'content' => '```prolog\nStack Trace:',
+                'description' => $record['context']['exception']->getStackTrace(),
+            ];
+        }
+
+        return ['embeds' => $embeds];
     }
 
     public function formatBatch(array $records)
