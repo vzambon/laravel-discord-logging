@@ -18,7 +18,7 @@ class DiscordDefaultFormatter implements FormatterInterface
         Level::Error->value => '10038562',
         Level::Alert->value => '11342935',
         Level::Emergency->value => '15548997',
-	    Level::Critical->value => '#992D22',
+	    Level::Critical->value => '15548997',
     ];
 
     public $logLevelIcon = [
