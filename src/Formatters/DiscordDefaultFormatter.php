@@ -60,7 +60,6 @@ class DiscordDefaultFormatter implements FormatterInterface
         $level = $record['level_name'];
 
         return [
-            'content' => "```prolog\n{$level}```",
             'embeds' => [
                 [
                     'author' => [
