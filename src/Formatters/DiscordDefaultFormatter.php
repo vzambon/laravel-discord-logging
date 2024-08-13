@@ -64,7 +64,7 @@ class DiscordDefaultFormatter implements FormatterInterface
                 [
                     'author' => [
                         'name' => $appname,
-                        'url' => 'https://raw.githubusercontent.com/vzambon/laravel-discord-logging/assets/gir_robot.png'
+                        'icon_url' => 'https://raw.githubusercontent.com/vzambon/laravel-discord-logging/assets/gir_robot.png'
                     ],
                     'title' => "{$messageIcon} {$level}",
                     'description' => "`$message`",
