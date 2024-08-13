@@ -8,8 +8,6 @@ use Monolog\LogRecord;
 
 class DiscordDefaultFormatter implements FormatterInterface
 {
-    public const DEFAULT_DATE_FORMAT = 'Y-m-d  H:i:s';
-
     public $logLevelColor = [
         Level::Debug->value => '1752220',
         Level::Info->value => '0',
@@ -38,7 +36,6 @@ class DiscordDefaultFormatter implements FormatterInterface
 
     public function __construct(string $dateFormat = null, bool $printStack = false)
     {
-        $this->dateFormat = is_null($dateFormat) ? static::DEFAULT_DATE_FORMAT : $dateFormat;
         $this->printStack = $printStack;
     }
 
