@@ -14,7 +14,7 @@ class DiscordLogginServiceProvider extends ServiceProvider
     public function boot()
     {
         $this->publishes([
-            __DIR__ . 'config/discord.php' => config_path('discord.php'),
+            __DIR__ . '/config/discord.php' => config_path('discord.php'),
         ], 'config');
 
         if ($this->app->runningInConsole()) {
@@ -29,9 +29,8 @@ class DiscordLogginServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        // Merge package configuration with the application configuration
         $this->mergeConfigFrom(
-            __DIR__ . 'config/discord.php', 'discord'
+            __DIR__ . '/config/discord.php', 'logging'
         );
     }
 }
