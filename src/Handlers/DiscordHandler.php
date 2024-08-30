@@ -9,6 +9,7 @@ use Monolog\Handler\AbstractProcessingHandler;
 use Monolog\Level;
 use Monolog\Logger;
 use Monolog\LogRecord;
+use Vzambon\LaravelDiscordLogging\DiscordWebhookClient;
 
 class DiscordHandler extends AbstractProcessingHandler
 {
@@ -28,7 +29,12 @@ class DiscordHandler extends AbstractProcessingHandler
             return;
         }
 
-        DiscordMessageJob::dispatch($record['formatted']);
+        if(config('logging.channels.discord.options.asynchronous')) {
+            DiscordMessageJob::dispatch($record['formatted']);
+            return;
+        }
+
+        (new DiscordWebhookClient(config('logging.channels.discord.webhook_url')))->send($record['formatted']);
     }
 
     /**

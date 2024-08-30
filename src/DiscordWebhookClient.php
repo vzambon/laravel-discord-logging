@@ -2,8 +2,10 @@
 
 namespace Vzambon\LaravelDiscordLogging;
 
+use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Facades\Storage;
 
 class DiscordWebhookClient
 {
@@ -11,12 +13,34 @@ class DiscordWebhookClient
     {
     }
 
-    public function send($data)
+    public function send($data, array $attachments = [])
     {
+        $client = Http::asMultipart();
+
+        if(!empty($attachments)){
+            foreach($attachments as $key => $attachment) {
+                $path = $attachment['path'];
+                $contents = File::get($path);
+                $client->attach("files[$key]", $contents, $attachment['filename']);
+            }
+
+            $attachments = collect($attachments)->map(fn($el, $key) => [
+                "id" => $key,
+                "path" => Storage::disk(config('backup.backup.destination.disks')[0])->path($el),
+                "filename" => File::name($el)
+            ]);
+
+            $attachments->each(fn($el) => 
+                $client->attach('files['.$el['id'].']', File::get($path), $el['filename'])
+            );
+        }
+
         try {
-            Http::post($this->webhookUrl, $data);
+            $client->attach('payload_json', json_encode($data + ['attachments' => $attachments->toArray()]));
+            $client->post($this->webhookUrl);
+
         } catch (\Exception $e) {
-            Log::error('Failed to send Discord message: ' . $e->getMessage());
+            Log::channel('stack')->error('Failed to send Discord message: ' . $e->getMessage());
         }
     }
 }

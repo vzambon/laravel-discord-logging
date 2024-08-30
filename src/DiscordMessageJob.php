@@ -22,7 +22,8 @@ class DiscordMessageJob implements ShouldQueue
      */
     public function handle(): void
     {
-        (new DiscordWebhookClient(config('logging.channels.discord.webhook_url')))->send($this->data);
+        $webhookUrl = config('logging.channels.discord.webhook_url');
+        (new DiscordWebhookClient($webhookUrl))->send($this->data);
     }
 
 }

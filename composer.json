@@ -18,6 +18,13 @@
             "role": "Developer"
         }
     ],
-    "minimum-stability": "stable",
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Vzambon\\LaravelDiscordLogging\\DiscordLogginServiceProvider"
+            ]
+        }
+    },
+    "minimum-stability": "dev",
     "prefer-stable": true
 }
