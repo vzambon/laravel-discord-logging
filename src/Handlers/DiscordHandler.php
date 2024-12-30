@@ -2,6 +2,7 @@
 
 namespace Vzambon\LaravelDiscordLogging\Handlers;
 
+use Illuminate\Support\Facades\Log;
 use Vzambon\LaravelDiscordLogging\DiscordMessageJob;
 use Vzambon\LaravelDiscordLogging\Formatters\DiscordDefaultFormatter;
 use Monolog\Formatter\FormatterInterface;
@@ -15,6 +16,7 @@ class DiscordHandler extends AbstractProcessingHandler
 {
     public function __construct(Level $level = Level::Debug)
     {
+
         $this->level = Logger::toMonologLevel($level) ?? Level::Debug;
 
         parent::__construct($level, true);

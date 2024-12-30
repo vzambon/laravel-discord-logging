@@ -13,35 +13,35 @@ enum LogLevel: int
     use HasColors;
     use HasIcons;
 
-    #[Color(config('discord.logging.color.debug'))]
-    #[Icon(config('discord.logging.icons.debug'))]
+    #[Color('debug')]
+    #[Icon('debug')]
     case Debug = Level::Debug->value;
 
-    #[Color(config('discord.logging.color.info'))]
-    #[Icon(config('discord.logging.icons.info'))]
+    #[Color('info')]
+    #[Icon('info')]
     case Info = Level::Info->value;
 
-    #[Color(config('discord.logging.color.notice'))]
-    #[Icon(config('discord.logging.icons.notice'))]
+    #[Color('notice')]
+    #[Icon('notice')]
     case Notice = Level::Notice->value;
 
-    #[Color(config('discord.logging.color.warning'))]
-    #[Icon(config('discord.logging.icons.warning'))]
+    #[Color('warning')]
+    #[Icon('warning')]
     case Warning = Level::Warning->value;
 
-    #[Color(config('discord.logging.color.error'))]
-    #[Icon(config('discord.logging.icons.error'))]
+    #[Color('error')]
+    #[Icon('error')]
     case Error = Level::Error->value;
 
-    #[Color(config('discord.logging.color.critical'))]
-    #[Icon(config('discord.logging.icons.critical'))]
+    #[Color('critical')]
+    #[Icon('critical')]
     case Critical = Level::Critical->value;
 
-    #[Color(config('discord.logging.color.alert'))]
-    #[Icon(config('discord.logging.icons.alert'))]
+    #[Color('alert')]
+    #[Icon('alert')]
     case Alert = Level::Alert->value;
 
-    #[Color(config('discord.logging.color.emergency'))]
-    #[Icon(config('discord.logging.icons.emergency'))]
+    #[Color('emergency')]
+    #[Icon('emergency')]
     case Emergency = Level::Emergency->value;
 }

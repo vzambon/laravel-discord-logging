@@ -5,7 +5,10 @@ namespace Vzambon\LaravelDiscordLogging\Attributes;
 #[\Attribute]
 class Color
 {
-    public function __construct(public string $color)
-    { 
+    public string $color;
+
+    public function __construct(public string $type)
+    {
+        $this->color = config('discord.logging.color.' . $type);
     }
 }
