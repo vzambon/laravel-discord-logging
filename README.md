@@ -22,7 +22,7 @@ Add the following to the logging.php config file:
 
     'channels' =>[
 	     //..
-	    'discord' => [ 
+	    'discord' => [
 		    'driver' => 'custom', 
 		    'via' => Vzambon\LaravelDiscordLogging\DiscordLogger::class, 
 		    'formatter' => 'default', 
@@ -33,6 +33,8 @@ Add the following to the logging.php config file:
 			], 
 		],
 	]
+
+In the `.env` file, add the `DISCORD_LOG_WEBHOOK_URL` obtained in Discord `Apps->Integrations->Webhooks->Copy Webhook URL`
 
 ## Asynchronous Logging
 
