@@ -2,7 +2,6 @@
 
 namespace Vzambon\LaravelDiscordLogging\Formatters;
 
-use Illuminate\Support\Facades\Log;
 use Monolog\Formatter\FormatterInterface;
 use Monolog\LogRecord;
 use Vzambon\LaravelDiscordLogging\Enums\LogLevel;
@@ -14,7 +13,6 @@ class DiscordDefaultFormatter implements FormatterInterface
      */
     public function format(LogRecord $record)
     {
-        Log::channel('single')->debug('DiscordDefaultFormatter@format');
         $appname = config('app.name');
 
         $logLevel = LogLevel::from($record['level']);
