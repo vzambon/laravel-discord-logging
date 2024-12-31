@@ -34,11 +34,10 @@ Add the following to the logging.php config file:
 		],
 	]
 
-In the `.env` file, add the `DISCORD_LOG_WEBHOOK_URL` obtained in Discord `Apps->Integrations->Webhooks->Copy Webhook URL`
+In the `.env` file, add the `DISCORD_LOG_WEBHOOK_URL` obtained from Discord by navigating to `Apps → Integrations → Webhooks` and clicking `Copy Webhook URL`.
+## Asynchronous Loggin
 
-## Asynchronous Logging
-
-The `asynchronous` option allows log messages to be sent using a queued job. To utilize this feature, ensure that your queue worker is running:
+The `asynchronous` option allows log messages to be sent using a queued job. To utilize this feature, ensure that your default queue worker is running:
 
     php artisan queue:work
   
@@ -51,6 +50,25 @@ To start sending logs to Discord, you just need to log messages using Laravel's 
     use Illuminate\Support\Facades\Log;
     
 	Log::channel('discord')->info('Hello Discord!');
+
+## Examples
+
+![Info Log](https://raw.githubusercontent.com/vzambon/laravel-discord-logging/refs/heads/assets/1_info_log.png)
+
+![Debug Log](https://raw.githubusercontent.com/vzambon/laravel-discord-logging/refs/heads/assets/2_debug_log.png)
+
+![Notice Log](https://raw.githubusercontent.com/vzambon/laravel-discord-logging/refs/heads/assets/3_notice_log.png)
+
+![Warning Log](https://raw.githubusercontent.com/vzambon/laravel-discord-logging/refs/heads/assets/4_warning_log.png)
+
+![Error Log](https://raw.githubusercontent.com/vzambon/laravel-discord-logging/refs/heads/assets/5_error_log.png)
+
+![Critical Log](https://raw.githubusercontent.com/vzambon/laravel-discord-logging/refs/heads/assets/6_critical_log.png)
+
+![Alert Log](https://raw.githubusercontent.com/vzambon/laravel-discord-logging/refs/heads/assets/7_alert_log.png)
+
+![Emergency Log](https://raw.githubusercontent.com/vzambon/laravel-discord-logging/refs/heads/assets/8_emergency_log.png)
+
 
 ## License
 This package is open-source software licensed under the MIT license.
