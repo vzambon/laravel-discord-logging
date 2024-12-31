@@ -69,6 +69,7 @@ To start sending logs to Discord, you just need to log messages using Laravel's 
 
 ![Emergency Log](https://raw.githubusercontent.com/vzambon/laravel-discord-logging/refs/heads/assets/8_emergency_log.png)
 
+![Exception Log](https://raw.githubusercontent.com/vzambon/laravel-discord-logging/refs/heads/assets/9_exception_log.png)
 
 ## License
 This package is open-source software licensed under the MIT license.
